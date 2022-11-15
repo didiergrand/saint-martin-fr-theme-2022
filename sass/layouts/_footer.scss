@@ -1,0 +1,9 @@
+#secondary{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} 
+.site-footer{
+    background-color: $color__footer;
+    color: $color__background-body; 
+    padding: 80px 0;
+}

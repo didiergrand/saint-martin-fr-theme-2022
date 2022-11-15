@@ -1,0 +1,30 @@
+#masthead{
+    display: grid;
+    grid-template-columns: 500px auto;
+    position: relative;
+}
+.custom-logo{
+    width: 200px;
+    margin: auto 20px -50px;
+    max-width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.header-image{
+    img{
+        width: calc(100% - 40px);
+        margin: 10px 20px 10px;
+    }
+}
+.site-title,
+.site-description{
+    position: fixed;
+    top:-100px;
+}
+@media screen and (min-width: 820px) {
+    .custom-logo{
+        width: 400px;
+        margin: auto 50px -50px;
+    }
+}    
