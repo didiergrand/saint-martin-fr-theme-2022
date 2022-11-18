@@ -1,10 +1,17 @@
 .container{
-    max-width: 1200px;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
-.latest-news{
+.container-l{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.blog #primary .latest-news{
+    background-color: $color__background-screen;
+}
+.latest-news > .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
 } 
@@ -39,108 +46,27 @@
         height: 400px;
     }
 } 
-.blog #primary{
-    background-color: $color__background-screen;
+.bienvenue{
+    padding-top: 100px;
+    background-image: url("images/dots-gradient.png");
+    background-repeat: repeat-x;
 }
-#quicklinks{
-    display: grid;
-    text-transform: uppercase;
-    .quicklink{
-        text-align: center;
-        a{
-            border-radius: $border-radius;
-            display: block;
-            padding: 10px 10px 10px;
-            color:$color__navlink;
-            text-decoration: none;
-            background-color: $color__background-nav;
-            transition: background-color .5s;
-            &:hover{
-                background-color: $color__background-nav-hover;
-            }
+@media (max-width: 781px){
+    .photos-presentation{
+        .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+            flex-basis:auto !important;
         }
-        img{
-            border-radius: 0px;
+        .wp-block-columns {
+            flex-wrap: nowrap !important;
         }
     }
 }
-#quicklinks{
-    grid-template-columns: 1fr 1fr;
-    padding: 0 10px 20px;
-    .quicklink{
-        margin: 5px;
-        img{
-            width:44px;
-        }
-        figcaption{
-            line-height: 18px;
-            font-size: 14px;
-            min-height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+
+.photos-presentation{
+    :where(.wp-block-columns.is-layout-flex){
+        gap: 1em;
     }
-}
-@media screen and (min-width: 820px) {
-    #quicklinks{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        width: 800px;
-        margin: 0 auto;
-        .quicklink{
-            a{
-                height: 180px;
-                width: 180px;
-                padding: 30px 10px 10px;
-            }
-            img{
-                width:64px;
-                border-radius: 0px;
-            }
-            figcaption{
-                line-height: 21px;
-                font-size: 16px;
-            }
-        }
-    }
-}
-@media screen and (min-width: 1200px) {
-    #quicklinks{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        width: 1200px;
-        .quicklink{
-            a{
-                height: 130px;
-                width: 130px;
-                padding: 10px 10px 10px;
-            }
-            img{
-                width:44px;
-            }
-            figcaption{
-                line-height: 18px;
-                font-size: 14px;
-            }
-        }
-    }
-}
-@media screen and (min-width: 1600px) {
-    #quicklinks{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        width: 1600px;
-        .quicklink{
-            a{
-                height: 180px;
-                width: 180px;
-                padding: 20px 10px 10px;
-            }
-            img{
-                width:64px;
-            }
-            figcaption{
-                line-height: 21px;
-                font-size: 16px;
-            }
-        }
+    figure {
+        margin: 0.5em 0px;
     }
 }
