@@ -153,6 +153,7 @@ function saint_martin_fr_scripts() {
 	wp_style_add_data( 'saint-martin-fr-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'saint-martin-fr-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'saint-martin-fr-masonry', get_template_directory_uri() . '/js/masonry.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

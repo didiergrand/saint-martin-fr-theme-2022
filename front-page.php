@@ -22,7 +22,7 @@ get_header();
 	</div>
 	<main id="primary" class="site-main">
 		<div class="latest-news">
-			<div class="container">
+			<div class="container-l">
 
 
 			<?php
@@ -36,12 +36,7 @@ get_header();
 			
 			if ( $arr_posts->have_posts() ) :
 				while ( $arr_posts->have_posts() ) :
-
-
-
-
 					$arr_posts->the_post();
-
 					/*
 					* Include the Post-Type-specific template for the content.
 					* If you want to override this in a child theme, then include a file
@@ -71,7 +66,6 @@ get_header();
 						$arr_posts->the_post();
 						?>
 						<?php the_content(); ?>
-						<a href="<?php the_permalink(); ?>">Read More</a>
 						<?php
 					endwhile;
 				endif;?>
@@ -81,3 +75,5 @@ get_header();
 
 <?php
 get_footer();
+
+

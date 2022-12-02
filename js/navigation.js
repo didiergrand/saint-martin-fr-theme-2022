@@ -11,10 +11,8 @@
 	const imageLinks = quicklinks.querySelectorAll('.widget_media_image');
 	let new_html = '';
 	imageLinks.forEach(function(imageLink) {
-		console.log(imageLink);
 		const aLinks = imageLink.querySelectorAll('a');
 		const link = aLinks[0].href;
-		console.log(link);
 		aLinks.forEach(function(aLink) {
 			const el = aLink;
 			const parent = el.parentNode;
@@ -22,9 +20,6 @@
 			while (el.firstChild) parent.insertBefore(el.firstChild, el);
 			// remove the empty element
 			parent.removeChild(el);
-
-
-			// 	console.log("alink");
 		});
 		org_html = imageLink.innerHTML;
 		new_html += '<div class="quicklink"><a href="'+link+'">' + org_html + '</a></div>';
