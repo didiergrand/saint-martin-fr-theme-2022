@@ -15,17 +15,9 @@
 
 		<?php get_sidebar(); ?>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'saint-martin-fr' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'saint-martin-fr' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'saint-martin-fr' ), 'saint-martin-fr', '<a href="http://digitalgarage.ch">Didier Grand</a>' );
-				?>
+			<div class="container-l">
+			© Commune de Saint-Martin FR | webdesign &amp; code : Didier Grand - <a href="https://www.digitalgarage.ch?ref=saint-martin-fr">digitalgarage.ch</a>
+			</div>	
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

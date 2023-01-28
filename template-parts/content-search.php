@@ -17,7 +17,7 @@
 		<div class="entry-meta">
 			<?php
 			saint_martin_fr_posted_on();
-			saint_martin_fr_posted_by();
+			//saint_martin_fr_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -28,8 +28,4 @@
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php saint_martin_fr_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

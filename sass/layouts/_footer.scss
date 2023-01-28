@@ -5,5 +5,16 @@
 .site-footer{
     background-color: $color__footer;
     color: $color__background-body; 
-    padding: 80px 0;
+    padding: 80px 0 0;
+}
+.site-info{
+    font-size: 12px;
+    background-color: $color__footer-info;
+    color: $lapis-lazuli !important;
+    .container-l{
+        padding: 10px 20px;
+    }
+    a{
+        color:$lapis-lazuli
+    }
 }

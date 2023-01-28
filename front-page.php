@@ -51,7 +51,7 @@ get_header();
 			</div>
 		</div>
 		<div class="bienvenue">
-			<div class="container-l">
+			<div class="container-m">
 			<?php
 				$args = array(
 					'post_type' => 'post',

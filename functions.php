@@ -49,7 +49,8 @@ function saint_martin_fr_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'saint-martin-fr' ),
+			'primary' => __( 'Primary Menu', 'saint-martin-fr'),
+			'secondary' => __( 'Secondary Menu', 'saint-martin-fr' ),
 		)
 	);
 
@@ -83,6 +84,8 @@ function saint_martin_fr_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'custom-logo' );
+
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	/**
@@ -142,6 +145,14 @@ function saint_martin_fr_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'requiredfoundation' ),
+		'id' => 'sidebar-main',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'saint_martin_fr_widgets_init' );
 

@@ -83,11 +83,11 @@
 @media screen and (min-width: 1600px) {
     #quicklinks{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        width: 1600px;
+        width: 1400px;
         .quicklink{
             a{
-                height: 180px;
-                width: 180px;
+                height: 160px;
+                width: 160px;
                 padding: 20px 10px 10px;
             }
             img{

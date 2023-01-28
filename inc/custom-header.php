@@ -24,8 +24,8 @@ function saint_martin_fr_custom_header_setup() {
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
+				'width'              => 1500,
+				'height'             => 1000,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'saint_martin_fr_header_style',
 			)

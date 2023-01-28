@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'footer-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area container">
+<aside id="secondary" class="widget-area container-l">
 	<?php dynamic_sidebar( 'footer-1' ); ?>
 </aside><!-- #secondary -->

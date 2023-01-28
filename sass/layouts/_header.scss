@@ -1,7 +1,8 @@
 #masthead{
     display: grid;
-    grid-template-columns: 500px auto;
+    grid-template-columns: auto auto;
     position: relative;
+    height: 50px; 
 }
 .custom-logo{
     width: 200px;
@@ -23,6 +24,9 @@
     top:-100px;
 }
 @media screen and (min-width: 820px) {
+    #masthead{
+        height: 100px;
+    }
     .custom-logo{
         width: 400px;
         margin: auto 50px -50px;

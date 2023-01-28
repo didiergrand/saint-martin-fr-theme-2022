@@ -1,32 +1,34 @@
 function resizeGridItem(item, grid){
-    console.log(item);
-    console.log(grid);
-    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-    rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap)+5);
-      item.style.gridRowEnd = "span "+rowSpan;
-  }
+  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+  rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap)+5);
+  item.style.gridRowEnd = "span "+rowSpan;
+}
   
-  function resizeAllGridItems(){
-    const grid = document.querySelector(".latest-news .container-l");
-    allItems = grid.querySelectorAll(".post");
+function resizeAllGridItems(){
+  const grid = document.querySelector(".latest-news .container-l");
+  allItems = grid.querySelectorAll(".post");
 
-    console.log(allItems.length);
+  for(x=0;x<allItems.length;x++){
+    resizeGridItem(allItems[x], grid);
+  }
+}
+function resizeInstance(instance){
+  item = instance.elements[0];
+  resizeGridItem(item);
+}
+
+
+window.addEventListener("load", (event) => {
+  const actualites = document.getElementsByClassName("category-actualites");
+  if(actualites.length > 0){
+    resizeAllGridItems();
+    window.addEventListener("resize", resizeAllGridItems);
+  
     for(x=0;x<allItems.length;x++){
-      resizeGridItem(allItems[x], grid);
-      console.log(allItems[x]);
+      imagesLoaded( allItems[x], resizeInstance);
     }
   }
-  
-  function resizeInstance(instance){
-      item = instance.elements[0];
-    resizeGridItem(item);
-  }
-  
-  window.onload = resizeAllGridItems();
-  window.addEventListener("resize", resizeAllGridItems);
-  
-  allItems = document.getElementsByClassName("item");
-  for(x=0;x<allItems.length;x++){
-    imagesLoaded( allItems[x], resizeInstance);
-  }
+});
+
+
