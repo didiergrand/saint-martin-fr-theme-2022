@@ -14,15 +14,20 @@
 
 get_header();
 ?>
-<div class="header-image">
-	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-</div>
-	<div id="quicklinks">
+<header class="entry-header">	
+	<!-- <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+ -->
+
+		<h1 class="entry-title" style="background-image: url('<?php esc_url(header_image()) ?>'); max-height:<?php echo get_custom_header()->height; ?>px">Bienvenue à Saint-Martin</h1>
+
+
+</header>
+	<div id="quicklinks" style="display:none">
 		<?php dynamic_sidebar( 'liens-1' ); ?>
 	</div>
 	<main id="primary" class="site-main">
 		<div class="latest-news">
-			<div class="container-l">
+			<div class="container-l" style="display:none">
 
 
 			<?php
@@ -30,7 +35,7 @@ get_header();
 				'post_type' => 'post',
 				'post_status' => 'publish',
 				'category_name' => 'actualites',
-				'posts_per_page' => 10,
+				'posts_per_page' => 20,
 			);
 			$arr_posts = new WP_Query( $args );
 			
@@ -44,13 +49,12 @@ get_header();
 					*/
 					get_template_part( 'template-parts/content', 'home' );
 				endwhile;
-				the_posts_navigation();
 			endif;?>
 
 
 			</div>
 		</div>
-		<div class="bienvenue">
+		<div class="bienvenue" style="display:none">
 			<div class="container-m">
 			<?php
 				$args = array(

@@ -34,6 +34,7 @@
 #page .entry-header,
 .single .entry-header{
     h1{
+        font-size: 1.5em;
         height: 200px;
         width: calc(100% - 40px);
         margin: 20px auto;
@@ -58,18 +59,29 @@
         background-color: rgba(0,0,0,0);
     }
 }
+.home #page .entry-header h1{
+    height: 400px;
+}
 @media screen and (min-width: 37.5em) {
     #page .entry-header h1,
     .single .entry-header h1{
         height: 400px;
+        font-size: 2em;
     }
-} 
-@media screen and (min-width: 75em) {
-    #page .entry-header h1,
-    .single .entry-header h1{
+    .home #page .entry-header h1{
         height: 600px;
     }
 } 
+
+
+
+
+// @media screen and (min-width: 75em) {
+//     #page .entry-header h1,
+//     .single .entry-header h1{
+//         height: 600px;
+//     }
+// } 
 .bienvenue{
     padding-top: 100px;
     background-image: url("images/dots-gradient.png");

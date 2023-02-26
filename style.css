@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Commune de Saint-Martin FR
 Theme URI: http://underscores.me/
@@ -50,6 +51,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* SCSS HEX */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,700;1,300&display=swap");
+:root {
+  --tec-font-family-sans-serif:
+  "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif ;
+}
+
 .m-b-0 {
   margin-bottom: 0;
 }
@@ -441,6 +447,11 @@ h2.entry-title a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 640px) {
+  h2 {
+    font-size: 1.1em;
+  }
+}
 p {
   margin-bottom: 1.5em;
 }
@@ -501,7 +512,7 @@ body {
 
 hr {
   background-color: #ccc;
-  border: 0;
+  border: 0 !important;
   height: 1px;
   margin-bottom: 1.5em;
 }
@@ -731,6 +742,7 @@ textarea {
 
 #page .entry-header h1,
 .single .entry-header h1 {
+  font-size: 1.5em;
   height: 200px;
   width: calc(100% - 40px);
   margin: 20px auto;
@@ -766,15 +778,17 @@ textarea {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.home #page .entry-header h1 {
+  height: 400px;
+}
+
 @media screen and (min-width: 37.5em) {
   #page .entry-header h1,
 .single .entry-header h1 {
     height: 400px;
+    font-size: 2em;
   }
-}
-@media screen and (min-width: 75em) {
-  #page .entry-header h1,
-.single .entry-header h1 {
+  .home #page .entry-header h1 {
     height: 600px;
   }
 }
@@ -813,7 +827,15 @@ textarea {
   margin: 0.5em 0px;
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (max-width: 1199px) {
+  .latest-news .container-l article {
+    background-color: #fff;
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+}
+@media screen and (min-width: 1200px) {
   .latest-news .container-l {
     display: -ms-grid;
     display: grid;
@@ -821,20 +843,25 @@ textarea {
     grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     grid-auto-rows: 20px;
   }
+  .latest-news .container-l article {
+    background-color: #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+  }
 }
-.latest-news .container-l article {
-  background-color: #fff;
-  padding: 20px 50px;
-  border-radius: 10px;
+@media (max-width: 781px) {
+  .site-footer p {
+    font-size: 14px;
+  }
 }
-
-#secondary {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+@media (min-width: 782px) {
+  #secondary {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
 .site-footer {
   background-color: #003253;
   color: #fff;
@@ -858,6 +885,13 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+.current_page_item > a,
+.current-menu-item > a,
+.current_page_ancestor > a,
+.current-menu-ancestor > a {
+  font-weight: 700;
+}
+
 #site-navigation.main-navigation {
   width: 100%;
   -webkit-box-pack: end;
@@ -869,9 +903,9 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 #primary-menu {
@@ -880,9 +914,24 @@ textarea {
   margin: 0;
   background-color: #fff;
 }
+#primary-menu > .menu-item-has-children > a {
+  position: relative;
+}
+#primary-menu > .menu-item-has-children > a::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #5D5D5D;
+  position: absolute;
+  right: -15px;
+  top: 27px;
+  z-index: 4;
+  display: block;
+}
 #primary-menu a {
   text-decoration: none;
-  font-weight: 400;
 }
 #primary-menu li {
   list-style-type: none;
@@ -894,13 +943,18 @@ textarea {
   display: block;
   text-decoration: none;
   color: #5D5D5D;
-  text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
   font-size: 16px;
 }
+#primary-menu > li > a {
+  text-transform: uppercase;
+}
 #primary-menu .multiplecols > .sub-menu > li > a {
   font-weight: 700;
+  text-transform: uppercase;
+  color: #5D5D5D;
+  cursor: default;
 }
 #primary-menu .sub-menu {
   position: absolute;
@@ -924,20 +978,7 @@ textarea {
   padding: 10px 0;
 }
 #primary-menu .focus > .sub-menu {
-  top: 80px;
-}
-#primary-menu .menu-item-has-children > a {
-  position: relative;
-}
-#primary-menu .menu-item-has-children > a::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  right: -15px;
-  top: 10px;
-  z-index: 4;
-  display: block;
+  top: 90px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1057,12 +1098,10 @@ textarea {
   #primary-menu .focus > .sub-menu {
     position: static;
   }
-  #primary-menu .menu-item-has-children > a {
-    position: relative;
-  }
-  #primary-menu .menu-item-has-children > a::after {
-    top: 30px;
-    right: 10px;
+  #primary-menu > .menu-item-has-children > a::after {
+    right: auto;
+    margin: 0 20px;
+    display: inline-block;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -1075,9 +1114,6 @@ textarea {
     display: grid;
     -ms-grid-columns: auto auto auto auto;
     grid-template-columns: auto auto auto auto;
-  }
-  #primary-menu > .menu-item-has-children > .sub-menu {
-    right: 0;
   }
   #primary-menu > .menu-item-has-children.focus > .sub-menu {
     min-width: 400px;
@@ -1111,7 +1147,7 @@ textarea {
     width: 20px;
     height: 20px;
     position: absolute;
-    left: 25px;
+    left: auto;
     bottom: -15px;
     z-index: 4;
     display: block;
@@ -1128,7 +1164,7 @@ textarea {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 80px;
+    height: 58px;
     position: relative;
   }
 }
@@ -1167,6 +1203,43 @@ textarea {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px;
+}
+
+.nav-subtitle {
+  display: none;
+}
+
+.nav-previous:before {
+  content: "←";
+}
+
+.nav-next:after {
+  content: "→";
+}
+
+.tribe-events-c-top-bar {
+  display: none !important;
+}
+
+.tribe-common .tribe-common-c-btn-border, .tribe-common a.tribe-common-c-btn-border {
+  color: #fff;
+  background-color: #00457a;
+  border-color: #00457a;
+}
+
+.tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
+  background-color: #003253;
+  border-color: #003253;
 }
 
 /* Comments
@@ -1215,20 +1288,20 @@ textarea {
 }
 
 #quicklinks {
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  padding: 0 10px 20px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0 10px 10px;
 }
 #quicklinks .quicklink {
   margin: 5px;
 }
 #quicklinks .quicklink img {
-  width: 44px;
+  width: 40px;
 }
 #quicklinks .quicklink figcaption {
-  line-height: 18px;
-  font-size: 14px;
-  min-height: 50px;
+  line-height: 12px;
+  font-size: 8px;
+  min-height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1240,6 +1313,19 @@ textarea {
           align-items: center;
 }
 
+@media screen and (min-width: 640px) {
+  #quicklinks {
+    padding: 0 10px 20px;
+  }
+  #quicklinks .quicklink img {
+    width: 44px;
+  }
+  #quicklinks .quicklink figcaption {
+    line-height: 18px;
+    font-size: 14px;
+    min-height: 50px;
+  }
+}
 @media screen and (min-width: 820px) {
   #quicklinks {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -1317,6 +1403,49 @@ textarea {
 
 img {
   border-radius: 10px;
+}
+
+.site-main a[href$=".doc"] {
+  padding-left: 25px;
+  background-image: url("images/office-file-doc.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+}
+.site-main a[href$=".docx"] {
+  padding-left: 25px;
+  background-image: url("images/office-file-doc.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+}
+.site-main a[href$=".xls"] {
+  padding-left: 25px;
+  background-image: url("images/office-file-xls.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+}
+.site-main a[href$=".xlsx"] {
+  padding-left: 25px;
+  background-image: url("images/office-file-xls.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+}
+.site-main a[href$=".pdf"] {
+  padding-left: 25px;
+  background-image: url("images/office-file-pdf.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
+}
+.site-main a[href^=http]:not([href*="saint-martin-fr.ch"]) {
+  padding-left: 25px;
+  background-image: url("images/app-window-link.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left;
 }
 
 /* Captions

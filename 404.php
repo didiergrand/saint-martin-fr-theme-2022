@@ -11,48 +11,26 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<article>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'saint-martin-fr' ); ?></h1>
+			<header class="entry-header">
+
+
+			<h1 class="entry-title" style="background-image: url('<?php esc_url(header_image()) ?>')">	Oops! Cette page est introuvable.
+			</h1>
 			</header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'saint-martin-fr' ); ?></p>
-
+			<div class="container">
+			<div class="entry-content">
+				<p>Il semble que rien n'ait été trouvé à cet endroit. Essayez peut-être l'un des liens ci-dessous  ?</p>
 					<?php
-					get_search_form();
-
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
+			</div><!-- .entry-content -->
+		</div>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'saint-martin-fr' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
 
-					<?php
-					/* translators: %1$s: smiley */
-					$saint_martin_fr_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'saint-martin-fr' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$saint_martin_fr_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		</article>
 
 	</main><!-- #main -->
 

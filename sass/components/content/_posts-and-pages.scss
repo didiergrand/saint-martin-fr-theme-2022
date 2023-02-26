@@ -21,3 +21,33 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.nav-links{
+	display: flex;
+	justify-content: space-between;
+	padding: 30px;
+}
+
+.nav-subtitle {
+	display: none;
+}
+
+.nav-previous:before {
+content: "\2190";
+}
+
+.nav-next:after {
+content: "\2192";
+}
+
+.tribe-events-c-top-bar{
+	display:none !important;
+}
+.tribe-common .tribe-common-c-btn-border, .tribe-common a.tribe-common-c-btn-border{
+	color: $color__background-body;
+	background-color: $indigo-dye;
+	border-color: $indigo-dye;
+}
+.tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover{	background-color: $prussian-blue-2;
+	border-color: $prussian-blue-2;
+}

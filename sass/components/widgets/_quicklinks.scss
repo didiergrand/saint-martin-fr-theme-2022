@@ -21,10 +21,27 @@
     }
 }
 #quicklinks{
-    grid-template-columns: 1fr 1fr;
-    padding: 0 10px 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 10px 10px;
     .quicklink{
         margin: 5px;
+        img{
+            width:40px;
+        }
+        figcaption{
+            line-height: 12px;
+            font-size: 8px;
+            min-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+@media screen and (min-width: 640px) {
+#quicklinks{
+    padding: 0 10px 20px;
+    .quicklink{
         img{
             width:44px;
         }
@@ -32,11 +49,9 @@
             line-height: 18px;
             font-size: 14px;
             min-height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     }
+}
 }
 @media screen and (min-width: 820px) {
     #quicklinks{

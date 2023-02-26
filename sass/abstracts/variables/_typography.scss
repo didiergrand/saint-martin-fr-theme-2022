@@ -8,4 +8,9 @@ $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 $font__bold: 700;
 $font__normal: 300;
-$font_light: 200
+$font_light: 200;
+
+:root {
+    --tec-font-family-sans-serif: 
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+  }

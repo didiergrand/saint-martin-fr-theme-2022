@@ -102,6 +102,11 @@ function saint_martin_fr_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_theme_support( 'custom-header', array(
+		'width'                  => 2000,
+		'height'                 => 700,
+	) );
+
 }
 add_action( 'after_setup_theme', 'saint_martin_fr_setup' );
 
@@ -199,3 +204,35 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+
+// function theme_customize_register( $wp_customize ) {
+//     $wp_customize->add_section( 'header_images', array(
+//         'title' => __( 'Header Images' ),
+//         'priority' => 30,
+//     ) );
+
+//     $wp_customize->add_setting( 'header_image_desktop' , array(
+//         'default' => '',
+//         'transport' => 'refresh',
+//     ) );
+
+//     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_image_desktop', array(
+//         'label' => __( 'Header Image (Desktop)' ),
+//         'section' => 'header_images',
+//         'settings' => 'header_image_desktop',
+//     ) ) );
+
+//     $wp_customize->add_setting( 'header_image_mobile' , array(
+//         'default' => '',
+//         'transport' => 'refresh',
+//     ) );
+
+//     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_image_mobile', array(
+//         'label' => __( 'Header Image (Mobile)' ),
+//         'section' => 'header_images',
+//         'settings' => 'header_image_mobile',
+//     ) ) );
+// }
+// add_action( 'customize_register', 'theme_customize_register' );

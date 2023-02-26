@@ -12,13 +12,18 @@
   <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 <?php endif; ?>
 <header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title" style="background-image: url('.$image[0].'">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+<?php 
+		if (has_post_thumbnail( $post->ID ) ):
+			$image_url = get_the_post_thumbnail_url( $post->ID, 'single-post-thumbnail' );
+			echo '<h1 class="entry-title" style="background-image: url('.esc_url($image_url).')">';
+		else :			
+	?>	
+		<h1 class="entry-title" style="background-image: url('<?php esc_url(header_image()) ?>')">	
+	<?php
 		endif;
-		?>
+		the_title();
+		echo '</h1>';
+	?>
 	</header><!-- .entry-header -->
 
 <div class="container">

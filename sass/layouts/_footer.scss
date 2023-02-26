@@ -1,7 +1,15 @@
-#secondary{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-} 
+
+@media (max-width: 781px){
+    .site-footer p {
+        font-size: 14px;
+    }
+}
+@media (min-width: 782px){
+    #secondary{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    } 
+}
 .site-footer{
     background-color: $color__footer;
     color: $color__background-body; 

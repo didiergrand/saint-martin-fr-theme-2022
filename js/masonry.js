@@ -7,6 +7,9 @@ function resizeGridItem(item, grid){
   
 function resizeAllGridItems(){
   const grid = document.querySelector(".latest-news .container-l");
+  const bienvenue = document.querySelector(".bienvenue");
+  grid.style.display = "grid";
+  bienvenue.style.display = "block";
   allItems = grid.querySelectorAll(".post");
 
   for(x=0;x<allItems.length;x++){
@@ -25,9 +28,9 @@ window.addEventListener("load", (event) => {
     resizeAllGridItems();
     window.addEventListener("resize", resizeAllGridItems);
   
-    for(x=0;x<allItems.length;x++){
-      imagesLoaded( allItems[x], resizeInstance);
-    }
+    // for(x=0;x<allItems.length;x++){
+    //   imagesLoaded( allItems[x], resizeInstance);
+    // }
   }
 });
 
