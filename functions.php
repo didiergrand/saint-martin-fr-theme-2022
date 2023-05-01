@@ -158,6 +158,18 @@ function saint_martin_fr_widgets_init() {
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
+	register_sidebar(
+		array(
+			'id' => 'st-martin-fr-sidebar',
+			'name' => esc_html__( 'st-martin-fr-sidebar', 'saint-martin-fr' ),
+			'description' => esc_html__( 'Sidebar widget', 'saint-martin-fr' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-title-holder"><h3 class="widget-title">',
+			'after_title' => '</h3></div>'
+			)
+		);
+	
 }
 add_action( 'widgets_init', 'saint_martin_fr_widgets_init' );
 
@@ -169,7 +181,6 @@ function saint_martin_fr_scripts() {
 	wp_style_add_data( 'saint-martin-fr-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'saint-martin-fr-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'saint-martin-fr-masonry', get_template_directory_uri() . '/js/masonry.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

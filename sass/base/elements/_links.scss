@@ -20,3 +20,23 @@ a {
 		outline: 0;
 	}
 }
+
+a.show-more {
+	pointer-events: all !important;
+	text-transform: none;
+	color: $color__text-main;
+	opacity: 0.5;
+	border: 0 !important;
+	padding-left: 20px;
+	background-image: url('images/arrow-circle-right.svg');
+	background-repeat: no-repeat;
+	background-size: 14px;
+	background-position: 0 2px;
+	font-size: 14px;
+	transition: opacity 0.5s ease-in-out;
+	text-decoration: none;
+	&:hover{
+		opacity: 1;
+		border: 0;
+	}
+}

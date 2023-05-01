@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Articles de mises à l'enquete
+ * Template Name: Agenda
  */
 get_header();
 ?>
@@ -25,23 +25,17 @@ get_header();
 				$args = array(
 					'post_type' => 'post',
 					'post_status' => 'publish',
-					'category_name' => 'mises-a-lenquete',
+					'category_name' => 'agenda',
+					'meta_key' => 'Calendrier - Ordre',
+					'orderby' => 'meta_value_num',
+					'order' => 'ASC',
 					'posts_per_page' => 20,
 				);?>
+
 				<?php $arr_posts = new WP_Query( $args ); ?>
 				<?php if ( $arr_posts->have_posts() ) : ?>
 				  <?php while ( $arr_posts->have_posts() ) : $arr_posts->the_post(); ?>
-					<?php if ( is_sticky() ) : ?>
-					  <!-- Code pour afficher l'article épinglé ici -->
-					  <?php get_template_part( 'template-parts/content', 'enquete' ); ?>
-					<?php endif; ?>
-				  <?php endwhile; ?>
-				  <?php rewind_posts(); // réinitialiser la liste des articles ?>
-				  <?php while ( $arr_posts->have_posts() ) : $arr_posts->the_post(); ?>
-					<?php if ( ! is_sticky() ) : ?>
-					  <!-- Code pour afficher les autres articles ici -->
-					  <?php get_template_part( 'template-parts/content', 'enquete' ); ?>
-					<?php endif; ?>
+                      <?php get_template_part( 'template-parts/content', 'agenda' ); ?>
 				  <?php endwhile; ?>
 				  <?php wp_reset_postdata(); // réinitialiser les données de la requête ?>
     <?php endif; ?>

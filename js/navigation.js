@@ -152,4 +152,24 @@ window.addEventListener("resize", () => {
 });
    
 
-  
+// close desktop nav on click outside
+
+// document.addEventListener("click", (event) => {
+//   const isClickInside = navigation.contains(event.target);
+//   if (!isClickInside) {
+//     navigation.className = "main-navigation";
+//     document.querySelector("body").style.overflow = "auto";
+//   }
+// }
+
+
+document.body.addEventListener("click", (event) => {
+  if (
+    !event.target.closest("#primary-menu")
+  ) {
+    console.log("outside");
+    submenubtn.forEach(function (submenubtn) {
+      submenubtn.classList.remove("focus");
+    });
+  }
+});

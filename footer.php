@@ -16,7 +16,7 @@
 		<?php get_sidebar(); ?>
 		<div class="site-info">
 			<div class="container-l">
-			© Commune de Saint-Martin FR | webdesign &amp; code : Didier Grand - <a href="https://www.digitalgarage.ch?ref=saint-martin-fr">digitalgarage.ch</a>
+			© Commune de Saint-Martin FR | <img src="https://www.saint-martin-fr.ch/wp-content/themes/saint-martin-fr-2022/images/dg-logo.png" height="8" width="8" style="border-radius: 0" /> webdesign &amp; code : Didier Grand - <a href="https://www.digitalgarage.ch?ref=saint-martin-fr">digitalgarage.ch</a>
 			</div>	
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

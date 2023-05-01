@@ -12,7 +12,7 @@
             background-color: $color__background-nav;
             transition: background-color .5s;
             &:hover{
-                background-color: $color__background-nav-hover;
+                background-color: $color__background-screen-right;
             }
         }
         img{
@@ -65,12 +65,12 @@
                 padding: 30px 10px 10px;
             }
             img{
-                width:64px;
+                width:48px;
                 border-radius: 0px;
             }
             figcaption{
-                line-height: 21px;
-                font-size: 16px;
+                line-height: 20px;
+                font-size: 15px;
             }
         }
     }
@@ -106,11 +106,11 @@
                 padding: 20px 10px 10px;
             }
             img{
-                width:64px;
+                width:48px;
             }
             figcaption{
-                line-height: 21px;
-                font-size: 16px;
+                line-height: 20px;
+                font-size: 15px;
             }
         }
     }

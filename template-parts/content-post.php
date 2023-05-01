@@ -15,14 +15,14 @@
 <?php 
 		if (has_post_thumbnail( $post->ID ) ):
 			$image_url = get_the_post_thumbnail_url( $post->ID, 'single-post-thumbnail' );
-			echo '<h1 class="entry-title" style="background-image: url('.esc_url($image_url).')">';
+			echo '<h1 class="entry-title" style="background-image: url('.esc_url($image_url).')"><span>';
 		else :			
 	?>	
-		<h1 class="entry-title" style="background-image: url('<?php esc_url(header_image()) ?>')">	
+		<h1 class="entry-title" style="background-image: url('<?php esc_url(header_image()) ?>')"><span>	
 	<?php
 		endif;
 		the_title();
-		echo '</h1>';
+		echo '</span></h1>';
 	?>
 	</header><!-- .entry-header -->
 

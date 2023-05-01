@@ -22,17 +22,85 @@
     }
     .container-l{
         min-height: 300px;
+    } 
+}
+.blog #primary{
+    background-color: $color__background-screen;
+    @media screen and (min-width: 1024px) {
+        background: linear-gradient(90deg, $color__background-screen 75%, $color__background-screen-right 25%);
     }
 }
-.blog #primary .latest-news{
-    background-color: $color__background-screen;
+.blog #primary .infos-diverses{
+    background-color: $color__background-screen-right;
+    height: 100%;
+    margin-left: -10px;
+    padding-left: 10px; 
+    @media screen and (max-width: 1024px) {
+        margin-left: -20px;
+        padding-left: 0px;
+        margin-right: -20px;
+        padding-right: 20px;
+    }
 }
-.latest-news > .container{
+#latest-news{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid colomns gap
+    grid-column-gap: 40px;
+    padding: 0 20px;
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+    }
+    h2{
+        font-weight: 400;
+        font-size: 24px;
+        text-transform: uppercase;
+        padding: 30px 0 0 20px;
+        margin-bottom: 10px;
+    }
+    > div{
+        margin-bottom: 40px;
+    }
+    .actualites-content,
+    .pilier-public-content{
+        background-color: $color__background-body;
+        border-radius: $border-radius;
+    }
+    .infos-diverses{    
+        padding-top: 24px;
+        .entry-header h3{
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .entry-content{
+            background-color: $color__background-body;
+            border-radius: $border-radius;
+            padding: 15px 40px;
+            margin-top: 13px;
+        }
+    }
+    article{
+        padding: 15px 40px;
+        h3 a{
+            text-decoration: none;
+            color: $color__text-main;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+    }
+    .infos-diverses article{
+        padding: 15px 0; 
+    }
+    hr{
+        margin: 0 40px;
+        padding: 0;
+        background-color: $color__background-screen;
+    }
 } 
 #page .entry-header,
-.single .entry-header{
+.single .entry-header{ 
     h1{
         font-size: 1.5em;
         height: 200px;
@@ -53,6 +121,9 @@
         font-weight: $font__normal;
         text-transform: uppercase;
         transition: background-color 2s ease-in-out;
+        span{
+            max-width: 900px;
+        }
 
     }
     h1:hover{
@@ -110,4 +181,99 @@
     figure {
         margin: 0.5em 0px; 
     }
+}
+a.tribe-events-calendar-list__event-title-link.tribe-common-anchor-thin{
+    pointer-events: none;
+}
+#st-martin-fr-sidebar{
+    padding: 15px 0 20px 20px;
+}
+.fond-blanc{
+    background-color: $color__background-body;
+    border-radius: $border-radius;
+    padding: 15px 40px;
+    margin-top: 13px;
+}
+#latest-news{
+    .tribe-events-widget-events-list__event{
+        padding: 0 20px !important;
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tribe-events-widget-events-list__event-datetime-wrapper{
+        padding: 0;
+        margin: 0;
+    }
+    .tribe-events-widget-events-list__event-date-tag{
+        background-color: $color__text-main;
+        span{
+            color: $color__background-body !important;
+        }
+        border-radius: 10px 0 0 10px;
+        margin-top: 13px;
+        line-height: normal;
+
+    }
+    .tribe-events-widget-events-list__event-wrapper{
+        background-color: $color__background-body;
+        border-radius: 0 10px 10px 0 ;
+        margin-top: 13px;
+    }
+    .tribe-events-widget-events-list__event-date-tag-datetime {
+        justify-content: center;
+    }
+    .tribe-events-widget-events-list__event-row{
+        margin-bottom: 0;
+    }
+    .tribe-common a, .tribe-common a:active, .tribe-common a:focus, .tribe-common a:hover, .tribe-common a:visited{
+        pointer-events: none;
+    }
+    .tribe-events-widget-events-list__header{
+        margin-bottom: 0;
+    }
+    .tribe-events-widget-events-list__view-more-link{
+        pointer-events: all !important;
+        text-transform: none;
+        color: $color__text-main;
+        opacity: 0.5;
+        border: 0 !important;
+		padding-left: 20px;
+		background-image: url('images/arrow-circle-right.svg');
+		background-repeat: no-repeat;
+		background-size: 14px;
+		background-position: 0 2px;
+        font-size: 14px;
+        transition: opacity 0.5s ease-in-out;
+        &:hover{
+            opacity: 1;
+            border: 0;
+        }
+    }
+}
+#latest-news .infos-diverses .st-martin-fr-sidebar header h2,
+.infos-diverses h3{
+        text-decoration: none;
+        color: $color__text-main;
+        font-size: 18px !important;
+        letter-spacing: 0.5px;
+        padding: 0;
+        text-transform: uppercase;    
+        font-weight: 400;
+        margin-bottom: -1px;
+}
+.infos-diverses > hr {
+    display: none;
+}
+.infos-diverses hr {
+    margin: 0 !important;
+}
+.page-template-agenda article.category-agenda p,
+.infos-diverses .agenda article p{
+    margin: 0 !important;
+    font-style: italic;
+}
+#mises-a-lenquete .category-mises-a-lenquete{
+    display: block;
 }
